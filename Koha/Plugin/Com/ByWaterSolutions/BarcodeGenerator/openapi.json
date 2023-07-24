@@ -1,0 +1,56 @@
+{
+  "/barcode": {
+    "get": {
+      "x-mojo-to": "Com::ByWaterSolutions::BarcodeGenerator::ApiController#generate",
+      "operationId": "GenerateBarcodePng",
+      "tags": ["barcode"],
+      "parameters": [
+        {
+          "description": "barcode",
+          "in": "query",
+          "name": "barcode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "description": "type",
+          "in": "query",
+          "name": "type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "description": "notext",
+          "in": "query",
+          "name": "notext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "description": "key",
+          "in": "query",
+          "name": "key",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "produces": [
+        "image/png"
+      ],
+      "responses": {
+        "200": {
+          "description": "OK if auth success, ERROR if auth failure"
+        },
+        "400": {
+          "description": "Bad request"
+        },
+        "403": {
+          "description": "Permission denied"
+        },
+        "500": {
+          "description": "Internal server error"
+        }
+      }
+    }
+  }
+}
