@@ -18,11 +18,8 @@ This plugin exposes one API :
 ### API path
 GET /api/v1/contrib/barcodegenerator/barcode?key=123456789&barcode=9876543241
 
-### Parameters
-
-#### user
-
-`barcode`: The barcode value to turn into an image
-`notext`: options, if true barcode image will not contain the barcode text
-`type`: optional, barcode type. Defaults to code39. Supported types are part of [GD::Barcode](https://metacpan.org/pod/GD::Barcode)
-`key`: optional, api key value
+### API Parameters
+* `barcode`: The barcode value to turn into an image
+* `notext`: options, if true barcode image will not contain the barcode text
+* `type`: optional, barcode type. Defaults to code39. Supported types are part of [GD::Barcode](https://metacpan.org/pod/GD::Barcode)
+* `key`: optional, api key value
