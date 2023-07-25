@@ -17,8 +17,8 @@ package Koha::Plugin::Com::ByWaterSolutions::BarcodeGenerator::ApiController;
 
 use Modern::Perl;
 
-use C4::Context;
 use C4::Auth qw(checkpw);
+use C4::Context;
 
 use Mojo::Base 'Mojolicious::Controller';
 use Mojo::JSON qw(decode_json);
@@ -60,9 +60,7 @@ sub generate {
         my $image =
           GD::Barcode->new( $type, $barcode )->plot( NoText => $notext )->png();
 
-        print header('image/png');
-        print $image;
-        exit 0;
+        return $c->render( data => $image, format => 'png' );
     }
     catch {
         return $c->render(
